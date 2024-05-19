@@ -1,0 +1,259 @@
+@import './all';
+
+.wallet {
+    padding: 120px 20px;
+    @include center();
+
+    .walletContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+
+        .title {
+            padding: 20px 0;
+            border-bottom: 2px solid rgba(0,0,0,0.2);
+
+            h2 {
+                font-size: 2.5em;
+                font-weight: normal;
+            }
+        }
+
+        .boxes {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(400px, 1fr));
+            gap: 30px;
+
+            .card {
+                display: flex;
+                flex-wrap: nowrap;
+                padding: 30px 20px;
+                gap: 30px;
+                position: relative;
+                box-shadow: 0px 0px 15px 4px rgba(0,0,0,0.1);
+
+                .deleteCard {
+                    position: absolute;
+                    top: 10px; right: 10px;
+
+                    i {
+                        font-size: 1.5em;
+                        cursor: pointer;
+                        color: var(--dark);
+                        transition: all 0.5s;
+
+                        &:hover {
+                            transform: rotate(180deg);
+                            color: var(--webColor);
+                        }
+                    }
+                }
+
+                .img {
+                    max-width: 150px;
+                    max-height: 250px;
+                    height: 100%;
+                    width: 100%;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        background-size: cover;
+                    }
+                }
+
+                .info {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+
+                    h3 {
+                        font-size: 1.3em;
+                        color: var(--dark);
+                    }
+
+                    .pahust {
+                        color: var(--webColor);
+                        font-size: .9em;
+                    }
+
+                    p {
+                        color: var(--dark);
+                        font-size: 1.1em;
+                    }
+
+                    
+                    .calculate {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+
+                        .gumar {
+                            display: flex;
+                            
+                            button, span {
+                                width: 40px;
+                                height: 40px;
+                                @include center();
+                                color: var(--dark);
+                                cursor: pointer;
+                                font-size: 1.2em;
+                            }
+
+                            button {
+                                background: var(--webColor);
+                                transition: all 0.5s;
+
+                                &:hover {
+                                    background: var(--dark);
+                                    color: var(--white);
+                                }
+                            }
+
+                            button:first-child{
+                                border-top-left-radius: 5px;
+                                border-bottom-left-radius: 5px;
+                            }
+                            button:last-child{
+                                border-top-right-radius: 5px;
+                                border-bottom-right-radius: 5px;
+                            }
+
+                            span {
+                                background: rgba(0,0,0,0.1);
+                            }
+                        }
+
+                        span {
+                            font-size: 1.2em;
+                        }
+
+                        input {
+                            font-size: 1.2em;
+                            height: 40px;
+                            width: 100%;
+                            padding: 0 5px;
+                        }
+                    }
+                }
+
+            }
+        }
+
+        .total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-top: 2px solid rgba(0,0,0,0.2);
+
+            h2 {
+                font-size: 1.3em;
+                font-weight: normal;
+            }
+
+            &Count {
+                display: flex;
+                align-items: center;
+                flex-wrap: nowrap;
+                gap: 40px;
+
+                span {
+                    font-size: 1.2em;
+                    color: var(--dark);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .wallet {
+        .walletContainer {
+            .boxes {
+                grid-template-columns: repeat(2, minmax(200px, 1fr));
+                .card {
+                    flex-direction: column;
+                    .img {
+                        @include center();
+                        min-width: 100%;
+
+                        img {
+                            width: 70%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 700px) {
+    .wallet {
+        .walletContainer {
+            .boxes {
+                grid-template-columns: 1fr;
+                .card {
+                    flex-direction: row;
+
+                    .img {
+                        @include center();
+                        min-width: 150px;
+
+                        img {
+                            width: 70%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 550px) {
+    .wallet {
+        .walletContainer {
+            .boxes {
+                grid-template-columns: 1fr;
+                .card {
+                    flex-direction: row;
+
+                    .info {
+                        .calculate {
+                            flex-direction: column;
+                            align-items: flex-start;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .wallet {
+        .walletContainer {
+            .boxes {
+                grid-template-columns: 1fr;
+                .card {
+                    
+                    flex-direction: column;
+
+                    .img {
+                        @include center();
+                        min-width: 100%;
+                    }
+
+                    .info {
+                        .calculate {
+                            flex-direction: row;
+                            align-items: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,275 @@
+@import url("https://fonts.cdnfonts.com/css/bellerose");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  list-style: none;
+  font-family: sans-serif;
+}
+
+:root {
+  --white: #fff;
+  --dark: rgba(0,0,0,0.8);
+  --webColor: #57823C;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  background-color: #F5F5F5;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: none;
+  background-color: var(--webColor);
+}
+
+h1 {
+  font-size: 3em;
+  color: var(--white);
+  text-align: center;
+  font-weight: bold;
+  font-family: "Bellerose", sans-serif;
+  line-height: 45px;
+}
+
+.section {
+  min-height: 100vh;
+  width: 100%;
+  padding: 100px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  max-width: 1250px;
+  width: 100%;
+  display: flex;
+}
+
+@media screen and (max-width: 900px) {
+  h1 {
+    font-size: 4em;
+  }
+}
+@media screen and (max-width: 720px) {
+  h1 {
+    font-size: 3em;
+  }
+}
+.wallet {
+  padding: 120px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wallet .walletContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+.wallet .walletContainer .title {
+  padding: 20px 0;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+}
+.wallet .walletContainer .title h2 {
+  font-size: 2.5em;
+  font-weight: normal;
+}
+.wallet .walletContainer .boxes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(400px, 1fr));
+  gap: 30px;
+}
+.wallet .walletContainer .boxes .card {
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 30px 20px;
+  gap: 30px;
+  position: relative;
+  box-shadow: 0px 0px 15px 4px rgba(0, 0, 0, 0.1);
+}
+.wallet .walletContainer .boxes .card .deleteCard {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.wallet .walletContainer .boxes .card .deleteCard i {
+  font-size: 1.5em;
+  cursor: pointer;
+  color: var(--dark);
+  transition: all 0.5s;
+}
+.wallet .walletContainer .boxes .card .deleteCard i:hover {
+  transform: rotate(180deg);
+  color: var(--webColor);
+}
+.wallet .walletContainer .boxes .card .img {
+  max-width: 150px;
+  max-height: 250px;
+  height: 100%;
+  width: 100%;
+}
+.wallet .walletContainer .boxes .card .img img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+.wallet .walletContainer .boxes .card .info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.wallet .walletContainer .boxes .card .info h3 {
+  font-size: 1.3em;
+  color: var(--dark);
+}
+.wallet .walletContainer .boxes .card .info .pahust {
+  color: var(--webColor);
+  font-size: 0.9em;
+}
+.wallet .walletContainer .boxes .card .info p {
+  color: var(--dark);
+  font-size: 1.1em;
+}
+.wallet .walletContainer .boxes .card .info .calculate {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.wallet .walletContainer .boxes .card .info .calculate .gumar {
+  display: flex;
+}
+.wallet .walletContainer .boxes .card .info .calculate .gumar button, .wallet .walletContainer .boxes .card .info .calculate .gumar span {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--dark);
+  cursor: pointer;
+  font-size: 1.2em;
+}
+.wallet .walletContainer .boxes .card .info .calculate .gumar button {
+  background: var(--webColor);
+  transition: all 0.5s;
+}
+.wallet .walletContainer .boxes .card .info .calculate .gumar button:hover {
+  background: var(--dark);
+  color: var(--white);
+}
+.wallet .walletContainer .boxes .card .info .calculate .gumar button:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.wallet .walletContainer .boxes .card .info .calculate .gumar button:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.wallet .walletContainer .boxes .card .info .calculate .gumar span {
+  background: rgba(0, 0, 0, 0.1);
+}
+.wallet .walletContainer .boxes .card .info .calculate span {
+  font-size: 1.2em;
+}
+.wallet .walletContainer .boxes .card .info .calculate input {
+  font-size: 1.2em;
+  height: 40px;
+  width: 100%;
+  padding: 0 5px;
+}
+.wallet .walletContainer .total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-top: 2px solid rgba(0, 0, 0, 0.2);
+}
+.wallet .walletContainer .total h2 {
+  font-size: 1.3em;
+  font-weight: normal;
+}
+.wallet .walletContainer .totalCount {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 40px;
+}
+.wallet .walletContainer .totalCount span {
+  font-size: 1.2em;
+  color: var(--dark);
+}
+
+@media screen and (max-width: 1100px) {
+  .wallet .walletContainer .boxes {
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+  }
+  .wallet .walletContainer .boxes .card {
+    flex-direction: column;
+  }
+  .wallet .walletContainer .boxes .card .img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100%;
+  }
+  .wallet .walletContainer .boxes .card .img img {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 700px) {
+  .wallet .walletContainer .boxes {
+    grid-template-columns: 1fr;
+  }
+  .wallet .walletContainer .boxes .card {
+    flex-direction: row;
+  }
+  .wallet .walletContainer .boxes .card .img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 150px;
+  }
+  .wallet .walletContainer .boxes .card .img img {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 550px) {
+  .wallet .walletContainer .boxes {
+    grid-template-columns: 1fr;
+  }
+  .wallet .walletContainer .boxes .card {
+    flex-direction: row;
+  }
+  .wallet .walletContainer .boxes .card .info .calculate {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+@media screen and (max-width: 420px) {
+  .wallet .walletContainer .boxes {
+    grid-template-columns: 1fr;
+  }
+  .wallet .walletContainer .boxes .card {
+    flex-direction: column;
+  }
+  .wallet .walletContainer .boxes .card .img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100%;
+  }
+  .wallet .walletContainer .boxes .card .info .calculate {
+    flex-direction: row;
+    align-items: center;
+  }
+}/*# sourceMappingURL=wallet.css.map */

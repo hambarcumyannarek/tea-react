@@ -1,0 +1,16 @@
+@import './all.scss';
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Kanit&family=Mukta&family=Permanent+Marker&family=Satisfy&family=Ysabeau+Infant:wght@1&display=swap');
+@import '../../components/navbar/styles/navbar.scss';
+
+
+#Home {
+    background-image: url("../../images/hero-big.jpg");
+    background-size: cover;
+    transform-origin: center;
+    @include center();
+
+    .homeContainer {
+        @include center();
+    }
+}
+

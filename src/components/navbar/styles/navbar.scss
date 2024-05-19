@@ -1,0 +1,124 @@
+@import '../../../pages/css/all.scss';
+
+.navbar {
+    width: 100%;
+    padding: 15px 0px;
+    background: var(--white);
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 100;
+    @include center();
+    transition: all 0.5s;
+
+    &.active {
+        box-shadow: 0 0 10px 5px rgba(0,0,0,0.1);
+    }
+
+    .navbarContainer {
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 20px;
+    
+        .logo {
+            width: 150px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                background-size: cover;
+            }
+        }
+
+        .links {
+            display: flex;
+            align-items: center;
+            gap: 80px;
+            position: relative;
+
+            .link {
+                transition: all 0.5s;
+                position: relative;
+                cursor: pointer;
+
+                span {
+                    font-size: 1.2em;
+                    font-weight: normal;
+                    color: var(--dark);
+                    transition: all 0.5s;   
+
+                    
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        bottom: -3px;
+                        height: 2px;
+                        width: 0%;
+                        background: var(--webColor);
+                        right: 0;
+                        transition: all 0.5s;
+                    }
+                }
+
+                &.active {
+                    color: var(--webColor);
+                    position: relative;
+
+                    span {              
+                        &::before {
+                            content: '';
+                            width: 100%;
+                        }
+                    }
+                }
+                &:hover {
+                    color: var(--webColor);
+                    transition: 0.5s;
+
+                    span {              
+                        &::before {
+                            content: '';
+                            left: 0;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+
+            .walletCartBtn {
+                cursor: pointer;
+                i {
+                    font-size: 1.4em;
+                    color: var(--dark);
+                }
+                .wlaletProductCount {
+                    position: absolute;
+                    top: -5px; right: -5px;
+                    width: 18px;
+                    height: 18px;
+                    padding: 2px;
+                    border-radius: 50%;
+                    background: var(--webColor);
+                    text-align: center;
+                    @include center();
+    
+                    span {
+                        color: var(--white);
+                        font-size: .6em;
+                    }
+                }
+            }
+
+        }
+    }   
+}
+
+
+@media screen and (max-width: 500px) {
+    .navbar {
+        .navbarContainer {
+            .links {
+                gap: 30px;
+            }
+        }
+    }
+}
