@@ -49,7 +49,7 @@ function reducer(state, action) {
   if(action.type === 'changebuy') {
     return state.map((obj, i) => {
       if(obj.id == action.payload.id) {
-        return {...obj, isBuy: !obj.isBuy}
+        return {...obj, isBuy: !obj.isBuy, buysCount: 1}
       }
       return obj;
     })
